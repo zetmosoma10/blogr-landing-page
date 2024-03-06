@@ -1,5 +1,11 @@
+import Footer from "./Sections/Footer";
+
 function App() {
-  return <main></main>;
+  return (
+    <main>
+      <Footer />
+    </main>
+  );
 }
 
 export default App;
