@@ -2,15 +2,16 @@ import Feature from "./Sections/Feature";
 import Footer from "./Sections/Footer";
 import Showcase from "./Sections/Showcase";
 import Infrastructure from "./Sections/Infrastructure";
-import Button from "./Components/Button";
+import Navbar from "./Components/Navbar";
 
 function App() {
   return (
-    <main>
+    <main className="bg-Light_red_CTA_text h-screen p-8">
       {/* <Footer /> */}
       {/* <Feature /> */}
       {/* <Showcase /> */}
       {/* <Infrastructure/> */}
+      <Navbar />
     </main>
   );
 }

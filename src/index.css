@@ -7,6 +7,6 @@
 
 @layer components {
   .btn {
-    @apply font-ubuntu font-bold text-base border border-White_text py-[15px] px-6 rounded-full;
+    @apply font-ubuntu font-bold text-base border border-White_text py-[12px] px-6 rounded-full;
   }
 }
