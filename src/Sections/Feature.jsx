@@ -1,12 +1,12 @@
 const Feature = () => {
   return (
-    <section className="font-overpass px-5 ">
-      <h2 className="text-center text-3xl font-semibold text-Very_dark_blue_headings tracking-[-0.84px] lg:text-4xl">
+    <section className="font-overpass px-5 max-w-[1110px]  mx-auto ">
+      <h2 className="text-center  text-3xl font-semibold text-Very_dark_blue_headings tracking-[-0.84px] lg:text-4xl">
         Designed for the future
       </h2>
-      <div className="grid max-w-[1110px] mx-auto mt-10 lg:mt-20 gap-y-10 lg:grid-cols-[50%,50%] lg:gap-x-10 ">
-        <div className="order-1 justify-self-center lg:order-2">
-          <picture className="lg:justify-self-end">
+      <div className="grid mt-10 lg:mt-20 gap-y-10 lg:grid-cols-[50%,50%] lg:gap-x-10 ">
+        <div className="order-1 justify-self-center lg:order-2 min-h-full">
+          <picture className="lg:justify-self-end  ">
             <source
               media="(max-width:1023px )"
               srcSet="/images/illustration-editor-mobile.svg"
@@ -15,14 +15,10 @@ const Feature = () => {
               media="(min-width:1024px )"
               srcSet="/images/illustration-editor-desktop.svg"
             />
-            <img
-              className="w-auto"
-              src="/images/illustration-editor-mobile.svg"
-              alt="desktop"
-            />
+            <img src="/images/illustration-editor-desktop.svg" alt="desktop" />
           </picture>
         </div>
-        <div className="order-2 lg:order-1 justify-self-center px-5 text-center lg:text-left lg:justify-self-start lg:self-center  ">
+        <div className="order-2 lg:order-1  justify-self-center px-5 text-center lg:text-left lg:justify-self-start lg:self-center  ">
           <h3 className="text-2xl lg:text-3xl font-semibold leading-8 text-Very_dark_blue_headings">
             Introducing an extensible editor
           </h3>
