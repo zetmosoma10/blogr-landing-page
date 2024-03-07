@@ -2,6 +2,7 @@ import Feature from "./Sections/Feature";
 import Footer from "./Sections/Footer";
 import Showcase from "./Sections/Showcase";
 import Infrastructure from "./Sections/Infrastructure";
+import Button from "./Components/Button";
 
 function App() {
   return (
@@ -9,7 +10,7 @@ function App() {
       {/* <Footer /> */}
       {/* <Feature /> */}
       {/* <Showcase /> */}
-      <Infrastructure/>
+      {/* <Infrastructure/> */}
     </main>
   );
 }
