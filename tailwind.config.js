@@ -25,6 +25,10 @@ export default {
         overpass: "Overpass, sans-serif",
         ubuntu: "Ubuntu ,sans-serif",
       },
+
+      backgroundImage: {
+        "Infrastructure-img": 'url("/images/bg-pattern-circles.svg")',
+      },
     },
   },
   plugins: ["prettier-plugin-tailwindcss"],

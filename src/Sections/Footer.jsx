@@ -3,7 +3,7 @@ import { footerLinks } from "../Constant";
 const Footer = () => {
   return (
     <footer
-      className="bg-Very_dark_black_blue_footer_background text-White_text
+      className="bg-Very_dark_black_blue_footer_background text-Grayish_blue_footer_text
         py-16 px-5 font-ubuntu mt-[100px] md:mt-[120px] rounded-tr-[100px]"
     >
       <div className="grid gap-y-10 md:grid-cols-4 max-w-[1110px] mx-auto">

@@ -1,6 +1,6 @@
 const Showcase = () => {
   return (
-    <section>
+    <section className="font-overpass">
       <div className="grid  lg:grid-cols-2 gap-y-10 gap-x-28">
         <picture className=" justify-self-center lg:justify-self-start ">
           <source
