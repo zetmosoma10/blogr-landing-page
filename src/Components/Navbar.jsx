@@ -62,7 +62,7 @@ const Navbar = () => {
                   </span>
                 </div>
                 {toggleState[index] && (
-                  <ul className="absolute top-10 bg-White_text text-Very_dark_gray_blue text-sm leading-8 ] rounded-md p-6 ">
+                  <ul className="absolute top-10 bg-White_text text-Very_dark_gray_blue text-sm leading-8 ] rounded-md p-6 shadow-xl">
                     {link.links.map((subLinks) => (
                       <li key={subLinks}>
                         <a

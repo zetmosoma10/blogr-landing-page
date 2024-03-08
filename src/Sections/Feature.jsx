@@ -1,6 +1,6 @@
 const Feature = () => {
   return (
-    <section className="font-overpass px-5 max-w-[1110px]  mx-auto ">
+    <section className="font-overpass max-w-[1110px]  mx-auto ">
       <h2 className="text-center  text-3xl font-semibold text-Very_dark_blue_headings tracking-[-0.84px] lg:text-4xl">
         Designed for the future
       </h2>
