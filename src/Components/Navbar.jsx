@@ -1,45 +1,51 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { footerLinks } from "../Constant";
 import Button from "./Button";
 
 const Navbar = () => {
-  const [toggle, setToggle] = useState(false);
+  const [toggleState, setToggleState] = useState(footerLinks.map((n) => false));
+  const [toggleMenu, setToggleMenu] = useState(false);
+  const navLinkRef = useRef(null);
 
-  const handleToggle = (id) => {
-    console.log(id);
-    if (id === "1") {
-      setToggle((prevToggle) => !prevToggle);
-      return;
-    }
-    if (id === "2") {
-      setToggle((prevToggle) => !prevToggle);
-      return;
-    }
-    if (id === "3") {
-      setToggle((prevToggle) => !prevToggle);
-      return;
+  const handleToggleState = (index) => {
+    setToggleState((prevStates) =>
+      prevStates.map((state, i) => (i === index ? !state : false))
+    );
+  };
+
+  const handleClickOutside = (event) => {
+    if (navLinkRef.current && !navLinkRef.current.contains(event.target)) {
+      setToggleState(footerLinks.map((n) => false));
     }
   };
+
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, []);
+
   return (
     <header className="font-ubuntu">
       <nav className="flex justify-between items-center">
-        <div className="flex">
+        <div ref={navLinkRef} className="flex">
           <a className="outline-none w-[100px]" href="#">
             <img src="/images/logo.svg" alt="logo" />
           </a>
-          <ul className="flex items-start ml-16 gap-8">
-            {footerLinks.map((link) => (
+          <ul className="hidden lg:flex items-center ml-16 gap-8">
+            {footerLinks.map((link, index) => (
               <li className="relative" key={link.header}>
-                <div className="flex items-center">
+                <div
+                  onClick={() => handleToggleState(index)}
+                  className="flex items-center"
+                >
                   <a
-                    className={`${toggle && "underline"} text-base font-bold outline-none text-White_text mr-2 hover:underline focus:underline`}
+                    className={`${toggleState[index] && "underline"} text-base font-bold outline-none text-White_text mr-2 hover:underline `}
                     href="#"
-                    onClick={() => handleToggle(link.id)}
                   >
                     {link.header}
                   </a>
                   <span>
-                    {!toggle ? (
+                    {!toggleState[index] ? (
                       <img src="/images/icon-arrow-dark.svg" alt="" />
                     ) : (
                       <img
@@ -50,7 +56,7 @@ const Navbar = () => {
                     )}
                   </span>
                 </div>
-                {toggle && (
+                {toggleState[index] && (
                   <ul className="absolute top-10 bg-White_text text-Very_dark_gray_blue text-sm leading-8 ] rounded-md p-6 ">
                     {link.links.map((subLinks) => (
                       <li key={subLinks}>
@@ -68,14 +74,21 @@ const Navbar = () => {
             ))}
           </ul>
         </div>
-        <div>
+        <div className="hidden lg:block">
           <a
-            className="text-White_text text-base opacity-75 mr-8 outline-none hover:opacity-100 focus:opacity-100"
+            className="text-White_text text-base opacity-75 mr-8 outline-none hover:opacity-100 hover:underline focus:opacity-100"
             href="#"
           >
             Login
           </a>
           <Button varient="white">Sign Up</Button>
+        </div>
+        <div className="lg:hidden cursor-pointer">
+          {!toggleMenu ? (
+            <img src="/images/icon-hamburger.svg" alt="" />
+          ) : (
+            <img src="/images/icon-close.svg" alt="" />
+          )}
         </div>
       </nav>
     </header>
