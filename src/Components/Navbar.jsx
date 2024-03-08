@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { footerLinks } from "../Constant";
 import Button from "./Button";
 import MobileNavbar from "./MobileNavbar";
+import AOS from "aos";
 
 const Navbar = () => {
   const [toggleState, setToggleState] = useState(footerLinks.map((n) => false));
@@ -27,6 +28,13 @@ const Navbar = () => {
   useEffect(() => {
     document.addEventListener("click", handleClickOutside);
     return () => document.removeEventListener("click", handleClickOutside);
+  }, []);
+
+  useEffect(() => {
+    AOS.init({
+      duration: 500,
+      easing: "ease-in-out",
+    });
   }, []);
 
   return (
@@ -62,7 +70,7 @@ const Navbar = () => {
                   </span>
                 </div>
                 {toggleState[index] && (
-                  <ul className="absolute top-10 bg-White_text text-Very_dark_gray_blue text-sm leading-8 ] rounded-md p-6 shadow-xl">
+                  <ul className="z-20 absolute top-10 bg-White_text text-Very_dark_gray_blue text-sm leading-8 ] rounded-md p-6 shadow-xl">
                     {link.links.map((subLinks) => (
                       <li key={subLinks}>
                         <a
@@ -98,7 +106,10 @@ const Navbar = () => {
       </nav>
 
       {showHamburger && (
-        <div className="absolute top-20 w-[90%]">
+        <div
+          data-aos={showHamburger ? "fade-left" : "fade-right"}
+          className="z-30 absolute top-20 w-[90%]"
+        >
           <MobileNavbar />
         </div>
       )}

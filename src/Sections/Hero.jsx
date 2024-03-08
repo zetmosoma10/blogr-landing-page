@@ -1,14 +1,19 @@
+import { useEffect } from "react";
 import Button from "../Components/Button";
 import Navbar from "../Components/Navbar";
+import AOS from "aos";
 
 const Hero = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <section
       className="bg-Light_red_CTA_text bg-[url(images/bg-pattern-intro-mobile.svg)] lg:bg-[url(images/bg-pattern-intro-desktop.svg)] 
        bg-top bg-center bg-contain bg-no-repeat font-overpass rounded-bl-[100px] pb-36"
     >
       <Navbar />
-      <div className="text-center mt-24 ">
+      <div data-aos="zoom-in" className="text-center mt-24 ">
         <h1 className="font-semibold text-4xl lg:text-6xl tracking-[-1.08px] lg:tracking-[-1.92px] text-White_text">
           A modern publishing platform
         </h1>

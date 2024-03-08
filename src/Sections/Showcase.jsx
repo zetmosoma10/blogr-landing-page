@@ -1,8 +1,20 @@
+import AOS from "aos";
+import { useEffect } from "react";
+
 const Showcase = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <section className="font-overpass max-w-[1110px] mx-auto w-[90%]">
       <div className="grid  lg:grid-cols-2 gap-y-10 gap-x-28">
-        <picture className=" justify-self-center lg:justify-self-start ">
+        <picture
+          data-aos="fade-right"
+          data-aos-offset="200"
+          data-aos-easing="ease-in-sine"
+          className=" justify-self-center lg:justify-self-start "
+        >
           <source
             media="(max-width:1023px )"
             srcSet="/images/illustration-laptop-mobile.svg"
@@ -14,7 +26,7 @@ const Showcase = () => {
           <img src="/images/illustration-laptop-desktop.svg" alt="desktop" />
         </picture>
         <div className=" justify-self-center lg:justify-self-start text-center lg:text-start self-center">
-          <div>
+          <div data-aos="flip-up">
             <h3 className="text-2xl lg:text-3xl font-semibold leading-8 text-Very_dark_blue_headings">
               Free, open, simple
             </h3>

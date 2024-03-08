@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { footerLinks } from "../Constant";
 import Button from "./Button";
+import AOS from "aos";
 
 const MobileNavbar = () => {
   const [toggleMenu, setToggleMenu] = useState(footerLinks.map((n) => false));
@@ -11,6 +12,10 @@ const MobileNavbar = () => {
       prevStates.map((state, i) => (i === index ? !state : false))
     );
   };
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   return (
     <div className=" lg:hidden rounded-md bg-White_text font-overpass text-center text-Very_dark_blue_headings px-6 py-8 drop-shadow-2xl">
@@ -36,7 +41,10 @@ const MobileNavbar = () => {
               </span>
             </div>
             {toggleMenu[index] && (
-              <ul className=" bg-White_text bg-Grayish_blue_footer_text bg-opacity-25 text-Very_dark_gray_blue text-sm leading-8  rounded-md  py-3">
+              <ul
+                data-aos="fade-down"
+                className=" bg-White_text bg-Grayish_blue_footer_text bg-opacity-25 text-Very_dark_gray_blue text-sm leading-8  rounded-md  py-3"
+              >
                 {link.links.map((subLinks) => (
                   <li key={subLinks}>
                     <a

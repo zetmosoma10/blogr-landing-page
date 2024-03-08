@@ -1,4 +1,11 @@
+import { useEffect } from "react";
+import AOS from "aos";
+
 const Infrastructure = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <section
       className="bg-[url(/images/bg-pattern-circles.svg)] bg-no-repeat bg-top 
@@ -6,10 +13,13 @@ const Infrastructure = () => {
        text-White_text  lg:pb-0 mt-32 rounded-tr-[100px] rounded-bl-[100px]"
     >
       <div className="grid grid-rows-[40%,60%] w-[90%] lg:grid-cols-2 lg:grid-rows-none max-w-[1110px] mx-auto lg:gap-x-16 ">
-        <div className="self-end justify-self-center">
+        <div data-aos="fade-up" className="self-end justify-self-center">
           <img src="/images/illustration-phones.svg" alt="phones" />
         </div>
-        <div className=" text-center lg:text-start lg:self-center">
+        <div
+          data-aos="fade-left"
+          className=" text-center lg:text-start lg:self-center"
+        >
           <h2 className="font-semibold text-[40px] tracking-[-1.2px]">
             State of the Art Infrastructure
           </h2>
