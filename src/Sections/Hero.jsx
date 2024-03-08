@@ -9,7 +9,7 @@ const Hero = () => {
   }, []);
   return (
     <section
-      className="bg-Light_red_CTA_text bg-[url(images/bg-pattern-intro-mobile.svg)] lg:bg-[url(images/bg-pattern-intro-desktop.svg)] 
+      className="bg-Light_red_CTA_text bg-[url(/images/bg-pattern-intro-mobile.svg)] lg:bg-[url(/images/bg-pattern-intro-desktop.svg)] 
        bg-top bg-center bg-contain bg-no-repeat font-overpass rounded-bl-[100px] pb-36"
     >
       <Navbar />
