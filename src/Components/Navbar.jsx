@@ -1,16 +1,21 @@
 import { useEffect, useRef, useState } from "react";
 import { footerLinks } from "../Constant";
 import Button from "./Button";
+import MobileNavbar from "./MobileNavbar";
 
 const Navbar = () => {
   const [toggleState, setToggleState] = useState(footerLinks.map((n) => false));
-  const [toggleMenu, setToggleMenu] = useState(false);
+  const [showHamburger, setShowHamburger] = useState(false);
   const navLinkRef = useRef(null);
 
   const handleToggleState = (index) => {
     setToggleState((prevStates) =>
       prevStates.map((state, i) => (i === index ? !state : false))
     );
+  };
+
+  const hamburgerToggle = () => {
+    setShowHamburger((prevToggleMenu) => !prevToggleMenu);
   };
 
   const handleClickOutside = (event) => {
@@ -25,7 +30,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className="font-ubuntu">
+    <header className="relative font-ubuntu max-w-[1110px] mx-auto p-5">
       <nav className="flex justify-between items-center">
         <div ref={navLinkRef} className="flex">
           <a className="outline-none w-[100px]" href="#">
@@ -83,14 +88,20 @@ const Navbar = () => {
           </a>
           <Button varient="white">Sign Up</Button>
         </div>
-        <div className="lg:hidden cursor-pointer">
-          {!toggleMenu ? (
+        <div onClick={hamburgerToggle} className="lg:hidden cursor-pointer">
+          {!showHamburger ? (
             <img src="/images/icon-hamburger.svg" alt="" />
           ) : (
             <img src="/images/icon-close.svg" alt="" />
           )}
         </div>
       </nav>
+
+      {showHamburger && (
+        <div className="absolute top-20 w-[90%]">
+          <MobileNavbar />
+        </div>
+      )}
     </header>
   );
 };

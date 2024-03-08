@@ -6,7 +6,7 @@ import Navbar from "./Components/Navbar";
 
 function App() {
   return (
-    <main className="bg-Light_red_CTA_text h-screen p-8">
+    <main className="bg-Light_red_CTA_text h-screen ">
       {/* <Footer /> */}
       {/* <Feature /> */}
       {/* <Showcase /> */}
