@@ -30,7 +30,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className="relative font-ubuntu max-w-[1110px] mx-auto p-5">
+    <header className="relative font-ubuntu max-w-[1110px] mx-auto py-5 w-[90%]">
       <nav className="flex justify-between items-center">
         <div ref={navLinkRef} className="flex">
           <a className="outline-none w-[100px]" href="#">

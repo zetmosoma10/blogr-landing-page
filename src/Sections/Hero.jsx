@@ -4,8 +4,8 @@ import Navbar from "../Components/Navbar";
 const Hero = () => {
   return (
     <section
-      className="bg-Light_red_CTA_text bg-[url('/images/pattern-intro-mobile.svg')] lg:bg-[url('/images/pattern-intro-desktop.svg')] 
-      bg-no-repeat bg-cover font-overpass rounded-bl-[100px] pb-36"
+      className="bg-Light_red_CTA_text bg-[url(images/bg-pattern-intro-mobile.svg)] lg:bg-[url(images/bg-pattern-intro-desktop.svg)] 
+       bg-top bg-center bg-contain bg-no-repeat font-overpass rounded-bl-[100px] pb-36"
     >
       <Navbar />
       <div className="text-center mt-24 ">

@@ -3,9 +3,9 @@ const Infrastructure = () => {
     <section
       className="bg-[url(/images/bg-pattern-circles.svg)] bg-no-repeat bg-top 
       bg-center bg-contain lg:bg-left font-overpass bg-Very_dark_desaturated_blue
-       text-White_text px-8 lg:pb-0 mt-32 rounded-tr-[100px] rounded-bl-[100px]"
+       text-White_text  lg:pb-0 mt-32 rounded-tr-[100px] rounded-bl-[100px]"
     >
-      <div className="grid grid-rows-[40%,60%] lg:grid-cols-2 lg:grid-rows-none max-w-[1110px] mx-auto lg:gap-x-16 ">
+      <div className="grid grid-rows-[40%,60%] w-[90%] lg:grid-cols-2 lg:grid-rows-none max-w-[1110px] mx-auto lg:gap-x-16 ">
         <div className="self-end justify-self-center">
           <img src="/images/illustration-phones.svg" alt="phones" />
         </div>
